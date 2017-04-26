@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="dyhshoppingmall.dyhshoppingmall.activity.MainActivity">
+
+    <RadioGroup
+        android:id="@+id/rg"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        >
+
+        <RadioButton
+            android:id="@+id/rd_home"
+            style="@style/radiobutton_style"
+            android:drawableTop="@drawable/home_button_selector"
+            android:text="首页"/>
+
+        <RadioButton
+            android:id="@+id/rd_classify"
+            style="@style/radiobutton_style"
+            android:drawableTop="@drawable/type_button_selector"
+            android:text="分类"/>
+
+        <RadioButton
+            android:id="@+id/rd_com"
+            style="@style/radiobutton_style"
+            android:drawableTop="@drawable/community_button_selector"
+            android:text="发现"/>
+
+        <RadioButton
+            android:id="@+id/rd_cart"
+            style="@style/radiobutton_style"
+            android:drawableTop="@drawable/cart_button_selector"
+            android:text="购物车"/>
+
+        <RadioButton
+            android:id="@+id/rd_user"
+            style="@style/radiobutton_style"
+            android:drawableTop="@drawable/user_button_selector"
+            android:text="我的"/>
+    </RadioGroup>
+
+    <FrameLayout
+        android:id="@+id/framelayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/rg"/>
+
+</RelativeLayout>
