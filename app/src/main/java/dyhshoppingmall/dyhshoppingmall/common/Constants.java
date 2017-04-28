@@ -7,11 +7,11 @@ package dyhshoppingmall.dyhshoppingmall.common;
  */
 public class Constants {
     //服务器原始地址
-    public static String URLBASE = "http://169.254.107.70:8080";
+    public static String URLBASE = "http://169.254.107.70:8080/DSShop";
     //主页面的路径
-    public static String HOME_URL = URLBASE + "/DSShop/json/HOME_URL.json";
+    public static String HOME_URL = URLBASE + "/json/HOME_URL.json";
     //图片地址 + url就能显示图片
-    public static String HOME_URL_IMAGE = URLBASE + "/DSShop/img";
+    public static String HOME_URL_IMAGE = URLBASE + "/img";
 
 
 }

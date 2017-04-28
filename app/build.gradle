@@ -35,4 +35,6 @@ dependencies {
     compile 'com.alibaba:fastjson:1.2.31'
     compile 'com.youth.banner:banner:1.4.9'
     compile 'com.github.bumptech.glide:glide:3.7.0'
+    //viewpager依赖
+    compile 'com.zhy:magic-viewpager:1.0.1'
 }

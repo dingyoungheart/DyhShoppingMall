@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:padding="10dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/home_arrow_left_new"/>
+
+        <TextView
+            android:id="@+id/tv_tuijian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="5dp"
+            android:text="新品推荐"
+            android:textColor="#000"/>
+
+        <TextView
+            android:id="@+id/recom_tv_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="5dp"
+            android:drawableRight="@drawable/home_arrow_right"
+            android:gravity="end"
+            android:padding="5dp"
+            android:text="查看更多"
+            android:textSize="15sp"
+            />
+    </LinearLayout>
+
+    <GridView
+        android:id="@+id/gv_recom"
+        android:layout_width="match_parent"
+        android:layout_height="360dp"
+        android:numColumns="3"
+        />
+
+
+</LinearLayout>
