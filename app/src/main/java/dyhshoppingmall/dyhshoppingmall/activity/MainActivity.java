@@ -17,11 +17,11 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import dyhshoppingmall.dyhshoppingmall.R;
 import dyhshoppingmall.dyhshoppingmall.fragment.BaseFragment;
-import dyhshoppingmall.dyhshoppingmall.fragment.FragmentCart;
 import dyhshoppingmall.dyhshoppingmall.fragment.FragmentClassify;
 import dyhshoppingmall.dyhshoppingmall.fragment.FragmentCom;
-import dyhshoppingmall.dyhshoppingmall.fragment.FragmentHome;
 import dyhshoppingmall.dyhshoppingmall.fragment.FragmentUser;
+import dyhshoppingmall.dyhshoppingmall.home.fragment.FragmentHome;
+import dyhshoppingmall.dyhshoppingmall.shoppingcart.fragment.FragmentCart;
 
 
 public class MainActivity extends AppCompatActivity {
