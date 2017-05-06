@@ -8,20 +8,20 @@ import java.io.Serializable;
  */
 public class GoodsBean implements Serializable {
 
-    private String name;
-    private String cover_price;
-    private String figure;
-    private String product_id;
-    private int number = 1;
+    public String name;
+    public String cover_price;
+    public String figure;
+    public String product_id;
+    public int number = 1;
 
     /**
      * 是否处于编辑状态
      */
-    private boolean isEditing;
+    public boolean isEditing;
     /**
      * 是否被选中
      */
-    private boolean isChildSelected;
+    public boolean isChildSelected;
 
     public GoodsBean() {
     }

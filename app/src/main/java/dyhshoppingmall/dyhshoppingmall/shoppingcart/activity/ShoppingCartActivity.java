@@ -46,12 +46,7 @@ public class ShoppingCartActivity extends Activity implements View.OnClickListen
      */
     private static final int ACTION_COMPLETE = 1;
 
-    /**
-     * Find the Views in the layout<br />
-     * <br />
-     * Auto-created on 2016-10-11 21:08:02 by Android Layout Finder
-     * (http://www.buzzingandroid.com/tools/android-layout-finder)
-     */
+
     private void findViews() {
         ibShopcartBack = (ImageButton) findViewById(R.id.ib_shopcart_back);
         tvShopcartEdit = (TextView) findViewById(R.id.tv_shopcart_edit);
@@ -75,12 +70,7 @@ public class ShoppingCartActivity extends Activity implements View.OnClickListen
         tv_empty_cart_tobuy.setOnClickListener(this);
     }
 
-    /**
-     * Handle button click events<br />
-     * <br />
-     * Auto-created on 2016-10-11 21:08:02 by Android Layout Finder
-     * (http://www.buzzingandroid.com/tools/android-layout-finder)
-     */
+
     @Override
     public void onClick(View v) {
 

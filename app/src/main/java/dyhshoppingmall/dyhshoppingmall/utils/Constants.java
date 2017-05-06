@@ -7,7 +7,7 @@ package dyhshoppingmall.dyhshoppingmall.utils;
  */
 public class Constants {
     //服务器原始地址
-    public static String URLBASE = "http://169.254.107.70:8080/DSShop/";
+    public static String URLBASE = "http://169.254.181.113:8080/DSShop/";
 
     // 请求Json数据基本URL
     public static final String BASE_URL_JSON = URLBASE + "json/";

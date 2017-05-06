@@ -66,6 +66,7 @@ class SeckillRecyclerViewAdapter extends RecyclerView.Adapter<SeckillRecyclerVie
             @Override
             public void onClick(View v) {
                 mOnSeckillRecyclerViewListener.OnItemClickListener(position);
+
             }
         });
 

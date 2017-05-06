@@ -22,6 +22,8 @@ import com.youth.banner.Transformer;
 import com.youth.banner.listener.OnBannerListener;
 import com.zhy.magicviewpager.transformer.RotateUpPageTransformer;
 
+import org.greenrobot.eventbus.EventBus;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -34,6 +36,7 @@ import dyhshoppingmall.dyhshoppingmall.bean.ResultBeanData;
 import dyhshoppingmall.dyhshoppingmall.home.utils.OnSeckillRecyclerViewListener;
 import dyhshoppingmall.dyhshoppingmall.utils.Constants;
 import dyhshoppingmall.dyhshoppingmall.utils.GlideImageLoader;
+
 
 /**
  * data:2017/4/25.
@@ -58,6 +61,7 @@ public class HomeFragmetAdapter extends RecyclerView.Adapter {
     private final LayoutInflater mLayoutInflater;  //加载布局的容器
 
     public int currentType = BANNER;    //  设置一个默认的条目类型默认为BANNER
+
 
     public HomeFragmetAdapter(Context content, ResultBeanData.ResultBean result) {
         mContext = content;
@@ -303,9 +307,10 @@ public class HomeFragmetAdapter extends RecyclerView.Adapter {
                     String figure = seckill_info.getList().get(position).getFigure();
                     String product_id = seckill_info.getList().get(position).getProduct_id();
                     GoodsBean goodsBean = new GoodsBean(name, cover_price, figure, product_id);
+                    EventBus.getDefault().postSticky(goodsBean);
 
-                    Intent intent=new Intent(mContext, GoodsInfoActivity.class);
-                    intent.putExtra(GOODS_BEAN, goodsBean);
+                    Intent intent = new Intent(mContext, GoodsInfoActivity.class);
+//                    intent.putExtra(GOODS_BEAN, goodsBean);
                     mContext.startActivity(intent);//跳转商品详情页
                 }
             });
@@ -344,9 +349,11 @@ public class HomeFragmetAdapter extends RecyclerView.Adapter {
                     String figure = recommend_info.get(position).getFigure();
                     String product_id = recommend_info.get(position).getProduct_id();
                     GoodsBean goodsBean = new GoodsBean(name, cover_price, figure, product_id);
+                    Intent intent = new Intent(mContext, GoodsInfoActivity.class);
 
-                    Intent intent=new Intent(mContext, GoodsInfoActivity.class);
-                    intent.putExtra(GOODS_BEAN, goodsBean);
+                    EventBus.getDefault().postSticky(goodsBean);
+
+//                    intent.putExtra(GOODS_BEAN, goodsBean);
                     mContext.startActivity(intent);//跳转商品详情页
                 }
             });
@@ -383,16 +390,15 @@ public class HomeFragmetAdapter extends RecyclerView.Adapter {
                     String product_id = hot_info.get(position).getProduct_id();
                     GoodsBean goodsBean = new GoodsBean(name, cover_price, figure, product_id);
 
-                    Intent intent=new Intent(mContext, GoodsInfoActivity.class);
-                    intent.putExtra(GOODS_BEAN, goodsBean);
+                    Intent intent = new Intent(mContext, GoodsInfoActivity.class);
+                    EventBus.getDefault().postSticky(goodsBean);
+
+//                    intent.putExtra(GOODS_BEAN, goodsBean);
                     mContext.startActivity(intent);//跳转商品详情页
                 }
             });
         }
     }
-
-
-
 
 
 }

@@ -23,6 +23,10 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+
 import java.util.List;
 
 import dyhshoppingmall.dyhshoppingmall.R;
@@ -60,6 +64,7 @@ public class GoodsInfoActivity extends Activity implements View.OnClickListener 
 
     private List<GoodsBean> goodsBeans;
     private GoodsBean goods_bean;
+    private Context mContext;
 
     //找控件
     private void findViews() {
@@ -130,7 +135,6 @@ public class GoodsInfoActivity extends Activity implements View.OnClickListener 
         } else if (v == tvGoodInfoCollection) {
             Toast.makeText(GoodsInfoActivity.this, "收藏", Toast.LENGTH_SHORT).show();
         } else if (v == tvGoodInfoCart) {
-//            Toast.makeText(GoodsInfoActivity.this, "购物车", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(this, ShoppingCartActivity.class);
             startActivity(intent);
 
@@ -149,9 +153,11 @@ public class GoodsInfoActivity extends Activity implements View.OnClickListener 
         findViews();
 
         cartProvider = CartProvider.getInstance();
-        //取出intent
-        Intent intent = getIntent();
-        goods_bean = (GoodsBean) intent.getSerializableExtra("goods_bean");
+//        Intent intent = getIntent();
+//        goods_bean = (GoodsBean) intent.getSerializableExtra("goods_bean");
+        mContext = GoodsInfoActivity.this;
+        EventBus.getDefault().register(mContext);
+
         if (goods_bean != null) {
             //本地获取存储的数据
             setDataFormView(goods_bean);
@@ -185,11 +191,14 @@ public class GoodsInfoActivity extends Activity implements View.OnClickListener 
     }
 
     //设置详情页的UI展示
+    @Subscribe(threadMode = ThreadMode.MAIN,sticky = true)
     public void setDataFormView(GoodsBean goodsBean) {
         String name = goodsBean.getName();
         String cover_price = goodsBean.getCover_price();
         String figure = goodsBean.getFigure();
         String product_id = goodsBean.getProduct_id();
+
+        Log.d("eventbus", "setDataFormView: "+goodsBean.toString());
 
         Glide.with(this).load(Constants.BASE_URl_IMAGE + figure).into(ivGoodInfoImage);
         if (name != null) {
@@ -286,4 +295,14 @@ public class GoodsInfoActivity extends Activity implements View.OnClickListener 
                 Gravity.BOTTOM, 0, VirtualkeyboardHeight.getBottomStatusHeight(GoodsInfoActivity.this));
 
     }
+
+    /**
+     * eventbus 解除订阅
+     */
+    @Override
+    protected void onDestroy() {
+        EventBus.getDefault().unregister(mContext);
+        super.onDestroy();
+    }
+
 }

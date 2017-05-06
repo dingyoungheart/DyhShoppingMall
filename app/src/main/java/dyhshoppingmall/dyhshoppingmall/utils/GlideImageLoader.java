@@ -8,6 +8,7 @@ import com.youth.banner.loader.ImageLoader;
 
 /**
  * Created by lx on 2017/3/17.
+ * Banner轮播器的Glide配置
  */
 
 public class GlideImageLoader extends ImageLoader {
